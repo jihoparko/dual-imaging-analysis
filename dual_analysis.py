@@ -59,6 +59,8 @@ print(f"Number of suite2p files = {nFiles}")
 
 #%% Load the data
 
+nFrames = 10240
+
 # AQuA data
 file_path, session_name = filesAqua[0]
 
@@ -119,7 +121,7 @@ for region in range(nRegions):
     
     # evtBinned[region,yy+1:nBins] = np.sum(evtCount[region,yy+1:])
     
-#%% Visualize each event's traces 
+#%% Visualize each region's traces 
 
 # For extracting the entire event traces per region over nFrames
 
@@ -171,7 +173,7 @@ sns.despine()
 dffAstro = np.mean(dffMat[1,:,:],axis=1)
 
 plt.figure(figsize=(10,5))
-plt.plot(avgDff)
+plt.plot(dffAstro)
 sns.despine()
 
 #%% Plot all of the data (neuro, astro, pupil, wheel)
